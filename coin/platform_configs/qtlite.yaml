@@ -1,8 +1,8 @@
 Version: 2
 Configurations:
 -
-    Id: 'ubuntu-24.04-arm64-static-qtlite'
-    Template: 'qtci-linux-Ubuntu-24.04-aarch64-50'
+    Id: 'ubuntu-24.04-x86-static-qtlite'
+    Template: 'qtci-linux-Ubuntu-24.04-x86_64-51'
     Compiler: 'GCC'
     Features: ['Sccache', 'UseConfigure', 'DoNotRunTests', 'MinimalStaticTests']
     Configure arguments: >
@@ -202,3 +202,10 @@ Configurations:
          -DFEATURE_quicktemplates2_hover=off
          -DFEATURE_quicktemplates2_multitouch=off'
     ]
+-
+    Id: 'ubuntu-24.04-x86-static-qtlite-tests'
+    Template: 'qtci-linux-Ubuntu-24.04-x86_64-51'
+    Compiler: 'GCC'
+    Features: ['Sccache', 'TestOnly','InsignificantTests']
+    Platform dependency: 'ubuntu-24.04-x86-static-qtlite'
+
